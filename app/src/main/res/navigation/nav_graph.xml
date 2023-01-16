@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/allCountriesScreen">
+
+    <fragment
+        android:id="@+id/allCountriesScreen"
+        tools:layout="@layout/screen_all_countries"
+        android:name="com.excample.testdemo.presentation.screens.allCountries.AllCountriesScreen"
+        android:label="AllCountriesScreen">
+        <action
+            android:id="@+id/action_allCountriesScreen_to_countryInfoScreen"
+            app:destination="@id/countryInfoScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryInfoScreen"
+        tools:layout="@layout/screen_country_info"
+        android:name="com.excample.testdemo.presentation.screens.countryInfo.CountryInfoScreen"
+        android:label="CountryInfoScreen" >
+        <argument
+            android:name="data"
+            app:argType="com.excample.testdemo.data.source.remote.dto.response.GetAllResponseItem" />
+    </fragment>
+</navigation>
